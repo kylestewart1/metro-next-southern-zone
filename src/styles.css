@@ -1,0 +1,36 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: grid;
+    grid-row: 1fr 2fr;
+    row-gap: 50px;
+    justify-items: start;
+    align-items: start;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+img {
+    width: 300px;
+}
+
+#map {
+
+    width: 1000px;
+    height: 600px;
+}
+
+.results:hover {
+    cursor: pointer;
+}
+
+a .leaflet-bar-part-single {
+    display: none;
+}
+
+.geosearch {
+    background: white;
+}
