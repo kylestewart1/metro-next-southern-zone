@@ -3,9 +3,10 @@ import "leaflet/dist/leaflet.css";
 import L, { marker } from "leaflet";
 import { GeoSearchControl, OpenStreetMapProvider } from "leaflet-geosearch";
 import zoneData from "../assets/Southern_Zone_WGS_1984.geojson";
+import markerIcon from "../assets/marker-icon.png";
 
 const icon = new L.icon({
-    iconUrl: "../assets/marker-icon.png",
+    iconUrl: markerIcon,
     iconSize: [20, 40],
 
 });
