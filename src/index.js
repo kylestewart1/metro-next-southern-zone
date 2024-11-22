@@ -11,7 +11,12 @@ const icon = new L.icon({
 
 });
 
-const provider = new OpenStreetMapProvider();
+const provider = new OpenStreetMapProvider({
+    params: {
+        'accept-language': 'en',
+        countrycodes: 'us',
+    }
+});
 
 const searchControl = new GeoSearchControl({
     provider: provider,
