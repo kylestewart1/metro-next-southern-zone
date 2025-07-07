@@ -2,9 +2,10 @@ import "./styles.css";
 import "leaflet/dist/leaflet.css";
 import L, { latLng, marker } from "leaflet";
 import { GeoSearchControl, OpenStreetMapProvider } from "leaflet-geosearch";
-import zoneData from "../assets/Southern_Zone_WGS_1984.geojson";
-import stops from "../assets/southern_zone_stops_WGS_1984.geojson";
-import routes from "../assets/southern_zone_nearby_routes_WGS_1984.geojson";
+import southernZone from "../assets/Southern_Zone_WGS_1984.geojson";
+import westernZone from "../assets/NorthernAndWesternZones_WGS_1984.geojson";
+import stops from "../assets/stops_in_zones.geojson";
+import routes from "../assets/regular_local_routes_WGS_1984.geojson";
 import markerIcon from "../assets/marker-icon.png";
 
 const icon = new L.icon({
@@ -44,8 +45,16 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 // Add zone polygon layer
-L.geoJSON(zoneData).addTo(map);
-
+L.geoJSON(southernZone, {
+    style: function (feature) {
+        return {color: "#781d7e"}
+    }
+}).addTo(map);
+L.geoJSON(westernZone, {
+    style: function (feature) {
+        return {color: "#781d7e"}
+    }
+}).addTo(map);
 
 // Add routes you'll be able to reach directly from METRO NEXT
 
@@ -57,10 +66,11 @@ function routeInfo(feature, layer) {
     }
 }
 L.geoJSON(routes, {
-    color: "red",
+    style: function (feature) {
+        return {color: "#E42311"}
+    },
     onEachFeature: routeInfo
 }).addTo(map);
-
 
 
 
