@@ -2,8 +2,7 @@ import "./styles.css";
 import "leaflet/dist/leaflet.css";
 import L, { latLng, marker } from "leaflet";
 import { GeoSearchControl, OpenStreetMapProvider } from "leaflet-geosearch";
-import southernZone from "../assets/Southern_Zone_WGS_1984.geojson";
-import westernZone from "../assets/NorthernAndWesternZones_WGS_1984.geojson";
+import zone from "../assets/WesternAndSouthern_WGS_1984.geojson";
 import stops from "../assets/stops_in_zones.geojson";
 import routes from "../assets/regular_local_routes_WGS_1984.geojson";
 import markerIcon from "../assets/marker-icon.png";
@@ -45,12 +44,7 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 // Add zone polygon layer
-L.geoJSON(southernZone, {
-    style: function (feature) {
-        return {color: "#781d7e"}
-    }
-}).addTo(map);
-L.geoJSON(westernZone, {
+L.geoJSON(zone, {
     style: function (feature) {
         return {color: "#781d7e"}
     }
