@@ -2,7 +2,7 @@ import "./styles.css";
 import "leaflet/dist/leaflet.css";
 import L, { latLng, marker } from "leaflet";
 import { GeoSearchControl, OpenStreetMapProvider } from "leaflet-geosearch";
-import zone from "../assets/Southern_Zone_WGS_1984.geojson";
+import zone from "../assets/ServiceAreaSingleBoundary_WGS_1984.geojson";
 import stops from "../assets/stops_in_zones.geojson";
 import routes from "../assets/regular_local_routes_WGS_1984.geojson";
 import markerIcon from "../assets/marker-icon.png";
